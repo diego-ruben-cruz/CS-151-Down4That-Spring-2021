@@ -27,6 +27,5 @@ public class CatOps
       // Print out basic output message describing Artyom and what he does.
        sopln("Artyom is a youthful cat, with only " + artyomAge + " years of life so far...");
        sopln("He is quite the curious cat, and a great defense against Vadim stealing the cookies that Boris bought");
-
-}
+  }
 }
