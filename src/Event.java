@@ -98,6 +98,22 @@ public class Event implements Comparable<Event>{
         }
     }
 
+    // Sorts by the ZonedDateTime object first, then by name, then by location
+    // @Override
+    // public int compareTo(Event other){
+    //     if(this.loggedTime.compareTo(other.loggedTime) == 0){
+    //         if(this.getName().compareTo(other.getName()) == 0){
+    //              return this.getLocation().compareTo(other.getLocation());
+    //          }
+    //         else{
+    //              return this.getName().compareTo(other.getName());
+    //          } 
+    //     }
+    //     else{
+    //         return this.loggedTime.compareTo(other.loggedTime)
+    //     }
+    // }
+
     @Override
     public boolean equals(Object other){
         Event objectToCheck = (Event) other;
