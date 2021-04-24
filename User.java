@@ -3,11 +3,11 @@ public class User {
     private String email;
     private String hashedPassword;
 
+    //* @author Akela Do-Ho//
     /**
      * @param inputEmail    this will hold the user's email
      * @param inputUsername this will hold user's username
      * @param inputPassword this will hold user's passcode
-     * @author Akela Do-Ho
      * Constructor for user object which in hold user's email, username,
      * and their password of choice. 
      */
