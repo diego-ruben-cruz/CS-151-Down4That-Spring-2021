@@ -10,5 +10,7 @@ public class User {
         //hashedPassword = inputPassword.hashAlgo(); 
     }
     
-    
+    public String getUserID(){
+        return userID;
+    }
 }
