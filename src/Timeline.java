@@ -2,6 +2,7 @@ package src;
 
 public class Timeline {
 
+<<<<<<< HEAD
     /**
     @author Akela Do-Ho
      * This is keep the timeline updated all the time while it's running on the website.
@@ -21,5 +22,4 @@ public class Timeline {
      */
     public void getEventList() {
         //Dylan had an idea for this one, don't specifically remember our intentions behind this one.
-    }
 }

@@ -4,9 +4,9 @@ public class User {
     private String hashedPassword;
 
     /**
-     * @param inputEmail    - this will hold the user's email
-     * @param inputUsername - this will hold user's username
-     * @param inputPassword - this will hold user's passcode
+     * @param inputEmail    this will hold the user's email
+     * @param inputUsername this will hold user's username
+     * @param inputPassword this will hold user's passcode
      * @author Akela Do-Ho
      * Constructor for user object which in hold user's email, username,
      * and their password of choice
@@ -21,7 +21,7 @@ public class User {
     /**
      * Get's the user's ID
      *
-     * @return userID
+     * @return userID the user's ID
      */
     public String getUserID() {
         return userID;
@@ -30,7 +30,7 @@ public class User {
     /**
      * Get's the user's email address
      *
-     * @return email
+     * @return email the user's email address
      */
     public String getEmail() {
         return email;
@@ -39,7 +39,7 @@ public class User {
     /**
      * Get's the user's password
      *
-     * @return hashedPassword
+     * @return hashedPassword the user's password
      */
     public String getHashedPassword() {
         return hashedPassword;
@@ -48,7 +48,7 @@ public class User {
     /**
      * Set's user's Id to a new Id.
      *
-     * @param newUserID
+     * @param newUserID the new user id
      */
     public String setUserID(String newUserID) {
         this.userID = newUserID;
@@ -57,7 +57,7 @@ public class User {
     /**
      * Set's user's email to a new email address.
      *
-     * @param newEmail
+     * @param newEmail the new user email
      */
     public String setEmail(String newEmail) {
         this.email = newEmail;
@@ -66,7 +66,7 @@ public class User {
     /**
      * Set's user's password to a new password.
      *
-     * @param newPassword
+     * @param newPassword the new password for user
      */
     public String setHashedPassword(String newPassword) {
         this.hashedPassword = newPassword;
