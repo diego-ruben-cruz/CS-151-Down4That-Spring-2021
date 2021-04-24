@@ -46,7 +46,7 @@ public class User {
     }
 
     /**
-     * Set's user's Id to a new Id
+     * Set's user's Id to a new Id.
      *
      * @param newUserID
      */
@@ -55,7 +55,7 @@ public class User {
     }
 
     /**
-     * Set's user's email to a new email address
+     * Set's user's email to a new email address.
      *
      * @param newEmail
      */
@@ -64,7 +64,7 @@ public class User {
     }
 
     /**
-     * Set's user's password to a new password
+     * Set's user's password to a new password.
      *
      * @param newPassword
      */
