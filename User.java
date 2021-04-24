@@ -28,7 +28,7 @@ public class User {
     }
 
     /**
-     * Get's the user's email address.
+     * Get's the user's email address
      *
      * @return email the user's email address
      */
@@ -37,7 +37,7 @@ public class User {
     }
 
     /**
-     * Get's the user's password.
+     * Get's the user's password
      *
      * @return hashedPassword the user's password
      */
@@ -46,7 +46,7 @@ public class User {
     }
 
     /**
-     * Set's user's Id to a new Id.
+     * Set's user's Id to a new Id
      *
      * @param newUserID the new user id
      */
@@ -55,7 +55,7 @@ public class User {
     }
 
     /**
-     * Set's user's email to a new email address.
+     * Set's user's email to a new email address
      *
      * @param newEmail the new user email
      */
@@ -64,7 +64,7 @@ public class User {
     }
 
     /**
-     * Set's user's password to a new password.
+     * Set's user's password to a new password
      *
      * @param newPassword the new password for user
      */
