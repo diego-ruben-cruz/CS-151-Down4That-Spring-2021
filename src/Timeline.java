@@ -1,8 +1,7 @@
 package src;
 
 public class Timeline {
-
-<<<<<<< HEAD
+    
     /**
     @author Akela Do-Ho
      * This is keep the timeline updated all the time while it's running on the website.
