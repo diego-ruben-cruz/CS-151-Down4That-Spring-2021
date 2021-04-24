@@ -1,3 +1,5 @@
+package src;
+
 public class Vote {
     private String authorID;
     private boolean isUpvote;
