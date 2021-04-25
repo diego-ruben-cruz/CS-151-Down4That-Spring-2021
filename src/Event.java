@@ -2,19 +2,19 @@ package src;
 
 import java.time.ZonedDateTime;
 
-public class Event implements Comparable<Event>{
+public class Event implements Comparable<Event> {
     private String eventName;
     private String eventLocation;
     private int eventDate;
     private int eventTime;
     private boolean preference;
 
-    //This class will include a possible implementation of ZonedDateTime in case there
-    //is enough dev time and resources to replace using ZonedDateTime objects rather than ints
-    //private ZonedDateTime loggedTime;
-
-    public Event(){
-        //loggedTime = java.time.ZonedDateTime.now();
+    /**
+     * no-param constructor, sets default values to either null, the current moment,
+     * or false, depending on var type.
+     */
+    public Event() {
+        // loggedTime = java.time.ZonedDateTime.now();
         eventName = "null";
         eventLocation = "null";
         eventDate = 0;
@@ -22,13 +22,23 @@ public class Event implements Comparable<Event>{
         preference = false;
     }
 
-    //public Event(String inputString, String inputLocation, ZonedDateTime inputDateTime){
-    //  eventName = inputString;    
-    //  location = inputLocation;  
-    //  loggedTime = inputDateTime;    
-    //}
-    
-    public Event(String inputString, String inputLocation, int inputDate, int inputTime, boolean inputPref){
+    // public Event(String inputString, String inputLocation, ZonedDateTime
+    // inputDateTime){
+    // eventName = inputString;
+    // location = inputLocation;
+    // loggedTime = inputDateTime;
+    // }
+
+    /**
+     * Creates an event object with instance vars set to input parameters.
+     * 
+     * @param inputString   input string for event name.
+     * @param inputLocation input string for event location.
+     * @param inputDate     input int for event date.
+     * @param inputTime     input int for event time.
+     * @param inputPref     input boolean for voting system.
+     */
+    public Event(String inputString, String inputLocation, int inputDate, int inputTime, boolean inputPref) {
         eventName = inputString;
         eventLocation = inputLocation;
         eventDate = inputDate;
@@ -36,64 +46,122 @@ public class Event implements Comparable<Event>{
         preference = inputPref;
     }
 
-    public String getName(){
+    /**
+     * Fetches the event name.
+     * 
+     * @return A string representing the event name.
+     */
+    public String getName() {
         return this.eventName;
     }
 
-    public void setName(String newName){
+    /**
+     * Sets the event name to a new value.
+     * 
+     * @param newName The new name for the event.
+     */
+    public void setName(String newName) {
         this.eventName = newName;
     }
 
-    public String getLocation(){
+    /**
+     * Fetches the location of the event
+     * 
+     * @return A string representing the event location.
+     */
+    public String getLocation() {
         return this.eventLocation;
     }
 
-    public void setLocation(String newLocation){
+    /**
+     * Sets the event location to a new value.
+     * 
+     * @param newLocation The new location for the event
+     */
+    public void setLocation(String newLocation) {
         this.eventLocation = newLocation;
     }
 
-    public int getDate(){
+    /**
+     * Fetches the date of the event.
+     * 
+     * @return The date of the event represented in an integer.
+     */
+    public int getDate() {
         return this.eventDate;
     }
 
-    public void setDate(int newDate){
+    /**
+     * Sets the event date to a new value
+     * 
+     * @param newDate The new event date.
+     */
+    public void setDate(int newDate) {
         this.eventDate = newDate;
     }
 
-    public int getTime(){
+    /**
+     * Fetches the event time.
+     * 
+     * @return The time of the event.
+     */
+    public int getTime() {
         return this.eventTime;
     }
 
-    public void setTime(int newTime){
+    /**
+     * Sets the event time to a new value.
+     * 
+     * @param newTime The new event time.
+     */
+    public void setTime(int newTime) {
         this.eventTime = newTime;
     }
 
-    public boolean getPreference(){
+    /**
+     * Fetches the preference associated with the event, will likely be replaced
+     * with further implementation of the Vote class.
+     * 
+     * @return
+     */
+    public boolean getPreference() {
         return this.preference;
     }
 
-    public void setPreference(boolean newPref){
+    /**
+     * Sets a new preference to the event, will likely be replaced with further
+     * implemenation of the Vote class.
+     * 
+     * @param newPref
+     */
+    public void setPreference(boolean newPref) {
         this.preference = newPref;
     }
 
-    //Sorts by date first, then time, then name, then location.
-    //Preference is not included in the comparison criteria because it comes down to a boolean.
+    // Sorts by date first, then time, then name, then location.
+    // Preference is not included in the comparison criteria because it comes down
+    // to a boolean.
+
+    /**
+     * Compares the current instance to another Event object.
+     * 
+     * @param other The Event that the current instance will be compared to.
+     * @return The result of the comparison between the two objects. -1 equates to
+     *         "less than", 0 equates to "equals", and 1 equates to "greater than"
+     */
     @Override
-    public int compareTo(Event other){
-        if(this.getDate() == other.getDate()){
-            if(this.getTime() == other.getTime()){
-                if(this.getName().compareTo(other.getName()) == 0){
+    public int compareTo(Event other) {
+        if (this.getDate() == other.getDate()) {
+            if (this.getTime() == other.getTime()) {
+                if (this.getName().compareTo(other.getName()) == 0) {
                     return this.getLocation().compareTo(other.getLocation());
-                }
-                else{
+                } else {
                     return this.getName().compareTo(other.getName());
                 }
-            }
-            else{
+            } else {
                 return this.getTime() - other.getTime();
-                }
-        }
-        else{
+            }
+        } else {
             return this.getDate() - other.getDate();
         }
     }
@@ -101,21 +169,27 @@ public class Event implements Comparable<Event>{
     // Sorts by the ZonedDateTime object first, then by name, then by location
     // @Override
     // public int compareTo(Event other){
-    //     if(this.loggedTime.compareTo(other.loggedTime) == 0){
-    //         if(this.getName().compareTo(other.getName()) == 0){
-    //              return this.getLocation().compareTo(other.getLocation());
-    //          }
-    //         else{
-    //              return this.getName().compareTo(other.getName());
-    //          } 
-    //     }
-    //     else{
-    //         return this.loggedTime.compareTo(other.loggedTime)
-    //     }
+    // if(this.loggedTime.compareTo(other.loggedTime) == 0){
+    // if(this.getName().compareTo(other.getName()) == 0){
+    // return this.getLocation().compareTo(other.getLocation());
+    // }
+    // else{
+    // return this.getName().compareTo(other.getName());
+    // }
+    // }
+    // else{
+    // return this.loggedTime.compareTo(other.loggedTime)
+    // }
     // }
 
+    /**
+     * Compares an event to some instance of an object for deep equality.
+     * 
+     * @param other The object that this one is getting compared to.
+     * @return returns a boolean that is the result of checking for deep equals.
+     */
     @Override
-    public boolean equals(Object other){
+    public boolean equals(Object other) {
         Event objectToCheck = (Event) other;
         return this.compareTo(objectToCheck) == 0 && this.getPreference() == objectToCheck.getPreference();
     }

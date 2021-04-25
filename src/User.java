@@ -5,19 +5,20 @@ public class User {
     private String email;
     private String hashedPassword;
 
-    //* @author Akela Do-Ho//
+    // * @author Akela Do-Ho//
     /**
      * @param inputEmail    this will hold the user's email
      * @param inputUsername this will hold user's username
-     * @param inputPassword this will hold user's passcode
-     * Constructor for user object which in hold user's email, username,
-     * and their password of choice. 
+     * @param inputPassword this will hold user's passcode Constructor for user
+     *                      object which in hold user's email, username, and their
+     *                      password of choice.
      */
     public User(String inputEmail, String inputUsername, String inputPassword) {
         email = inputEmail;
         userID = inputUsername;
-        //need to find some hashing algo that we can use to input the password and avoid it being used as a plaintext
-        //hashedPassword = inputPassword.hashAlgo();
+        // need to find some hashing algo that we can use to input the password and
+        // avoid it being used as a plaintext
+        // hashedPassword = inputPassword.hashAlgo();
     }
 
     /**
