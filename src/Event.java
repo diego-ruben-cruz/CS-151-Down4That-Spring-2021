@@ -135,6 +135,16 @@ public class Event implements Comparable<Event> {
 
     }
 
+    /**
+     * Sets a new Date-Time for the event object. Do we want to have separate
+     * methods that also alter the date specifically, and the time specifically?
+     * 
+     * @param newDateTime The new Date-Time for the event.
+     */
+    public void setEventDateTime(ZonedDateTime newDateTime) {
+        loggedTime = newDateTime;
+    }
+
     // /**
     // * Fetches the event time.
     // *
@@ -152,6 +162,38 @@ public class Event implements Comparable<Event> {
     // public void setTime(int newTime) {
     // this.eventTime = newTime;
     // }
+
+    /**
+     * Adds a vote to the arraylist associated with the event.
+     * 
+     * @param toBeAdded The vote object that is meant to be added.
+     */
+    public void addVote(Vote toBeAdded) {
+        eventVotes.add(toBeAdded);
+    }
+
+    /**
+     * Removes all instances of a vote object from the arraylist of votes.
+     * 
+     * @param toBeRemoved The vote object of reference that will be removed.
+     */
+    public void removeAllVotes(Vote toBeRemoved) {
+        for (Vote v : eventVotes) {
+            // Do we want to delete all instances that match? Or just the first one that
+            // pops up?
+            // Also, do we want to be able to remove by userID?
+        }
+    }
+
+    /**
+     * Removes a certain vote by its index in the arraylist.
+     * 
+     * @param indexToRemove The index that belongs to the vote that is supposed to
+     *                      be removed.
+     */
+    public void removeVoteByIndex(int indexToRemove) {
+        eventVotes.remove(indexToRemove);
+    }
 
     // /**
     // * Fetches the preference associated with the event, will likely be replaced
