@@ -1,6 +1,9 @@
 package src;
 
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.ArrayList;
 
 public class Event implements Comparable<Event> {
     private String eventName;
@@ -23,8 +26,8 @@ public class Event implements Comparable<Event> {
         loggedTime = ZonedDateTime.now();
         eventName = "null";
         eventLocation = "null";
-        eventDate = 0;
-        eventTime = 0;
+        // eventDate = 0;
+        // eventTime = 0;
         // preference = false;
     }
 
@@ -119,7 +122,8 @@ public class Event implements Comparable<Event> {
      * @return The date and time of the event.
      */
     public String getEventDateTime() {
-        return this.loggedTime.format(ofLocalizedDateTime(dateStyle, timeStyle));
+        return this.loggedTime.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM , FormatStyle.MEDIUM));
+        //The default detail level for displaying the event time is medium, but this does not have to be the case, we can adjust it as desired.
 
     }
 
