@@ -5,15 +5,18 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.ArrayList;
 
+/**
+ * The building block of Down4That, implements both Votes, and Events.
+ */
 public class Event implements Comparable<Event> {
     private String eventName;
     private String eventLocation;
-    //private int eventDate;
-    //private int eventTime;
+    // private int eventDate;
+    // private int eventTime;
 
     // Pretty sure that preference is going to get replaced by the eventVotes
     // implemenation
-    //private boolean preference;
+    // private boolean preference;
 
     private ArrayList<Vote> eventVotes;
     private ZonedDateTime loggedTime;
@@ -26,6 +29,8 @@ public class Event implements Comparable<Event> {
         loggedTime = ZonedDateTime.now();
         eventName = "null";
         eventLocation = "null";
+        eventVotes = new ArrayList<Vote>();
+
         // eventDate = 0;
         // eventTime = 0;
         // preference = false;
@@ -42,23 +47,25 @@ public class Event implements Comparable<Event> {
         eventName = inputString;
         eventLocation = inputLocation;
         loggedTime = inputDateTime;
+        eventVotes = new ArrayList<Vote>();
     }
 
     // /**
-    //  * Creates an event object with instance vars set to input parameters.
-    //  * 
-    //  * @param inputString   input string for event name.
-    //  * @param inputLocation input string for event location.
-    //  * @param inputDate     input int for event date.
-    //  * @param inputTime     input int for event time.
-    //  * @param inputPref     input boolean for voting system.
-    //  */
-    // public Event(String inputString, String inputLocation, int inputDate, int inputTime, boolean inputPref) {
-    //     eventName = inputString;
-    //     eventLocation = inputLocation;
-    //     eventDate = inputDate;
-    //     eventTime = inputTime;
-    //     preference = inputPref;
+    // * Creates an event object with instance vars set to input parameters.
+    // *
+    // * @param inputString input string for event name.
+    // * @param inputLocation input string for event location.
+    // * @param inputDate input int for event date.
+    // * @param inputTime input int for event time.
+    // * @param inputPref input boolean for voting system.
+    // */
+    // public Event(String inputString, String inputLocation, int inputDate, int
+    // inputTime, boolean inputPref) {
+    // eventName = inputString;
+    // eventLocation = inputLocation;
+    // eventDate = inputDate;
+    // eventTime = inputTime;
+    // preference = inputPref;
     // }
 
     /**
@@ -122,8 +129,9 @@ public class Event implements Comparable<Event> {
      * @return The date and time of the event.
      */
     public String getEventDateTime() {
-        return this.loggedTime.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM , FormatStyle.MEDIUM));
-        //The default detail level for displaying the event time is medium, but this does not have to be the case, we can adjust it as desired.
+        return this.loggedTime.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.MEDIUM));
+        // The default detail level for displaying the event time is medium, but this
+        // does not have to be the case, we can adjust it as desired.
 
     }
 
