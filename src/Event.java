@@ -1,6 +1,5 @@
-package src;
 
-import java.time.ZonedDateTime;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.ArrayList;
@@ -19,14 +18,15 @@ public class Event implements Comparable<Event> {
     // private boolean preference;
 
     private ArrayList<Vote> eventVotes;
-    private ZonedDateTime loggedTime;
+    private LocalDateTime loggedTime;
+    protected static DateTimeFormatter eventFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 
     /**
      * no-param constructor, sets default values to either null, the current moment,
      * or false, depending on var type.
      */
     public Event() {
-        loggedTime = ZonedDateTime.now();
+        loggedTime = LocalDateTime.now();
         eventName = "null";
         eventLocation = "null";
         eventVotes = new ArrayList<Vote>();
@@ -37,13 +37,13 @@ public class Event implements Comparable<Event> {
     }
 
     /**
-     * Creates an event object with ZonedDateTime implementation.
+     * Creates an event object with LocalDateTime implementation.
      * 
      * @param inputString   input string for event name.
      * @param inputLocation input string for event location.
      * @param inputDateTime input string for event date and time.
      */
-    public Event(String inputString, String inputLocation, ZonedDateTime inputDateTime) {
+    public Event(String inputString, String inputLocation, LocalDateTime inputDateTime) {
         eventName = inputString;
         eventLocation = inputLocation;
         loggedTime = inputDateTime;
@@ -124,7 +124,7 @@ public class Event implements Comparable<Event> {
 
     /**
      * Returns the date and time of the event to an easily recognizable String
-     * format via ZonedDateTime implemenation.
+     * format via LocalDateTime implemenation.
      * 
      * @return The date and time of the event.
      */
@@ -141,7 +141,7 @@ public class Event implements Comparable<Event> {
      * 
      * @param newDateTime The new Date-Time for the event.
      */
-    public void setEventDateTime(ZonedDateTime newDateTime) {
+    public void setEventDateTime(LocalDateTime newDateTime) {
         loggedTime = newDateTime;
     }
 
