@@ -53,7 +53,7 @@ public class User {
      *
      * @param newUserID the new user id
      */
-    public String setUserID(String newUserID) {
+    public void setUserID(String newUserID) {
         this.userID = newUserID;
     }
 
@@ -62,7 +62,7 @@ public class User {
      *
      * @param newEmail the new user email
      */
-    public String setEmail(String newEmail) {
+    public void setEmail(String newEmail) {
         this.email = newEmail;
     }
 
@@ -71,7 +71,7 @@ public class User {
      *
      * @param newPassword the new password for user
      */
-    public String setHashedPassword(String newPassword) {
+    public void setHashedPassword(String newPassword) {
         this.hashedPassword = newPassword;
     }
 
