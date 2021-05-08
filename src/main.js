@@ -11,3 +11,4 @@ function signOut() {
     $("#HomePage").css("display", "flex");
   });
 }
+
