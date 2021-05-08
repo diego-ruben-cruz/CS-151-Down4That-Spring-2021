@@ -2,7 +2,7 @@ package src;
 
 import java.util.ArrayList;
 
-public class EventList {
+public class EventList implements Comparable<Event>{
     private ArrayList<Event> eventsList;
 
     /**
@@ -12,6 +12,13 @@ public class EventList {
     public void sort() {
         // need to implement some comparator in either Event class or this method, check
         // the lecture material.
+        //using compareTo in event class?
+        Event event1 = new Event();
+        Event event 2  = new Event();
+        event1.compareTo(event2);
+
+        //or
+        //eventsList.sort(Event);
     }
 
     /**
@@ -23,6 +30,7 @@ public class EventList {
         // this will get done soon, just a matter of whether we want to be able to
         // delete the first match,
         // or if we want to delete multiple events that share the same name
+        eventsList.delete(eventName);
     }
 
     /**
