@@ -37,3 +37,4 @@ public class Vote {
         isUpvote = !isUpvote;
     }
 }
+
