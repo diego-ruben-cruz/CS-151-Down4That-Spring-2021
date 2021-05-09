@@ -1,6 +1,5 @@
+
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -53,6 +52,11 @@ public class EventList {
         }
     }
 
+    /**
+     * quick test method to test EventList methods on terminal, this will be ported to JUnit ASAP.
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
         Event eventOne = new Event("Event Juan", "Juan's House",
                 LocalDateTime.parse("08-05-2021 14:00", Event.eventFormatter));
@@ -71,6 +75,8 @@ public class EventList {
         main.addEvent(eventThree);
         main.addEvent(eventFour);
         main.addEvent(eventFive);
+
+        main.displayEvents();
 
         System.out.println("Dunzo");
     }
