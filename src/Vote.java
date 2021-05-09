@@ -1,4 +1,3 @@
-package src;
 
 /**
  * Users are able to vote on other user's event proposals with an upvote or

@@ -1,4 +1,3 @@
-package src;
 
 /**
  * FreeHours Class will manage the client's available hours for Events
