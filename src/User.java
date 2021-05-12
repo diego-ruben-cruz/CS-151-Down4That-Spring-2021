@@ -2,7 +2,7 @@
 public class User {
     private String userID;
     private String email;
-    private String hashedPassword;
+    private int hashedPassword;
 
     // * @author Akela Do-Ho//
     /**
@@ -44,7 +44,7 @@ public class User {
      *
      * @return hashedPassword the user's password
      */
-    public String getHashedPassword() {
+    public int getHashedPassword() {
         return hashedPassword;
     }
 
