@@ -130,7 +130,7 @@ public class Event implements Comparable<Event> {
     public void removeVoteByID(String inputID) {
         int index = 0;
         for (Vote v : eventVotes) {
-            if (v.getUserID.equals(inputID)) {
+            if (v.getAuthorID().equals(inputID)) {
                 eventVotes.remove(index);
                 break;
             }
@@ -176,7 +176,7 @@ public class Event implements Comparable<Event> {
     @Override
     public boolean equals(Object other) {
         if (other instanceof Event) {
-            return this.compareTo(objectToCheck) == 0;
+            return this.compareTo((Event) other) == 0;
         } else {
             return false;
         }
