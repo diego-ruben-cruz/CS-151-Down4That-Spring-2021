@@ -10,7 +10,8 @@ body {
   }
 
 nav{
-    display: absolute;
+    display: flex;
+    justify-content: center;
     text-align: center;
     min-height: 8vh;
     background: #E6FFFF;
@@ -23,11 +24,11 @@ nav{
 }
 
 .boxes{
-    min-height: 30vh;
     display: flex;
+    min-height: 100%;
     justify-content: center;
-    align-items: center;
     text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .boxes div{
@@ -97,7 +98,7 @@ nav{
     min-width: 75px;
 
     position: absolute;
-    top: 25px;
+    top: 12px;
     right: 35px;
 
     
