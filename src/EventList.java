@@ -53,20 +53,21 @@ public class EventList {
     }
 
     /**
-     * quick test method to test EventList methods on terminal, this will be ported to JUnit ASAP.
+     * quick test method to test EventList methods on terminal, this will be ported
+     * to JUnit ASAP.
      * 
      * @param args
      */
     public static void main(String[] args) {
-        Event eventOne = new Event("Event Juan", "Juan's House",
+        Event eventOne = new Event("User_1", "Event Juan", "Juan's House",
                 LocalDateTime.parse("08-05-2021 14:00", Event.eventFormatter));
-        Event eventTwo = new Event("Party", "Apple Gate",
+        Event eventTwo = new Event("User_2", "Party", "Apple Gate",
                 LocalDateTime.parse("01-04-2021 15:00", Event.eventFormatter));
-        Event eventThree = new Event("Goat Park", "Jammy's house",
+        Event eventThree = new Event("User_3", "Goat Park", "Jammy's house",
                 LocalDateTime.parse("01-04-2021 16:00", Event.eventFormatter));
-        Event eventFour = new Event("Event Juan", "Juan's House",
+        Event eventFour = new Event("User_4", "Event Juan", "Juan's House",
                 LocalDateTime.parse("01-05-2021 14:00", Event.eventFormatter));
-        Event eventFive = new Event("Church", "Bakersfield",
+        Event eventFive = new Event("User_5", "Church", "Bakersfield",
                 LocalDateTime.parse("07-05-2021 14:00", Event.eventFormatter));
 
         EventList main = new EventList();

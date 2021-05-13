@@ -8,10 +8,11 @@ import java.util.ArrayList;
  * The building block of Down4That, implements both Votes, and Events.
  */
 public class Event implements Comparable<Event> {
+    private String authorID;
     private String eventName;
     private String eventLocation;
-    private ArrayList<Vote> eventVotes;
     private LocalDateTime loggedTime;
+    private ArrayList<Vote> eventVotes;
 
     protected static DateTimeFormatter eventFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 
@@ -20,6 +21,7 @@ public class Event implements Comparable<Event> {
      * or false, depending on var type.
      */
     public Event() {
+        authorID = "null";
         loggedTime = LocalDateTime.now();
         eventName = "null";
         eventLocation = "null";
@@ -29,15 +31,26 @@ public class Event implements Comparable<Event> {
     /**
      * Creates an event object with LocalDateTime implementation.
      * 
+     * @param inputID       input string for associated user ID.
      * @param inputString   input string for event name.
      * @param inputLocation input string for event location.
      * @param inputDateTime input string for event date and time.
      */
-    public Event(String inputString, String inputLocation, LocalDateTime inputDateTime) {
+    public Event(String inputID, String inputString, String inputLocation, LocalDateTime inputDateTime) {
+        authorID = inputID;
         eventName = inputString;
         eventLocation = inputLocation;
         loggedTime = inputDateTime;
         eventVotes = new ArrayList<Vote>();
+    }
+
+    /**
+     * Fetches the ID of the user that created the event.
+     * 
+     * @return the User ID belonging to the creator of the event.
+     */
+    public String getAuthorID() {
+        return this.authorID;
     }
 
     /**
@@ -109,15 +122,19 @@ public class Event implements Comparable<Event> {
     }
 
     /**
-     * Removes all instances of a vote object from the arraylist of votes.
+     * Removes a vote object from the arraylist of votes based on the associated
+     * UserID.
      * 
-     * @param toBeRemoved The vote object of reference that will be removed.
+     * @param inputID The user ID of reference for which to remove the vote..
      */
-    public void removeAllVotes(Vote toBeRemoved) {
+    public void removeVoteByID(String inputID) {
+        int index = 0;
         for (Vote v : eventVotes) {
-            // Do we want to delete all instances that match? Or just the first one that
-            // pops up?
-            // Also, do we want to be able to remove by userID?
+            if (v.getAuthorID().equals(inputID)) {
+                eventVotes.remove(index);
+                break;
+            }
+            index++;
         }
     }
 
@@ -158,14 +175,32 @@ public class Event implements Comparable<Event> {
      */
     @Override
     public boolean equals(Object other) {
-        Event objectToCheck = (Event) other;
-        return this.compareTo(objectToCheck) == 0;
-        // Note: Not sure if it is worth comparing the Arraylist of votes, since that
-        // does not have too much to do with what really makes an event the same as
-        // another in our criteria. That is, what makes an event too similar to another
-        // happens at a higher level of abstraction.
+        if (other instanceof Event) {
+            return this.compareTo((Event) other) == 0;
+        } else {
+            return false;
+        }
+        /**
+         * Note 05 May 2021
+         * 
+         * Not sure if it is worth comparing the Arraylist of votes or by UserID, since
+         * that does not have too much to do with what really makes an event the same as
+         * another in our criteria. That is, what makes an event too similar to another
+         * happens at a higher level of abstraction.
+         * 
+         * The most important thing is to check that the compareTo is too similar. That
+         * is def the ground we all can agree on.
+         */
+    }
 
-        // The most important thing is to check that the compareTo is too similar. That
-        // is def the ground we all can agree on.
+    /**
+     * Returns a hashcode unique to an Event object.
+     * 
+     * @return the hashcode of the current Event object.
+     */
+    @Override
+    public int hashCode() {
+        return this.getAuthorID().hashCode() + this.getName().hashCode() + this.getLocation().hashCode()
+                + this.getEventDateTime().hashCode();
     }
 }
