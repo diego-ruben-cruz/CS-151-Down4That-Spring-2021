@@ -3,7 +3,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class EventList {
+public class EventList implements Comparable<Event>{
     private ArrayList<Event> eventsList;
 
     /**
@@ -30,6 +30,7 @@ public class EventList {
         // this will get done soon, just a matter of whether we want to be able to
         // delete the first match,
         // or if we want to delete multiple events that share the same name
+        eventsList.delete(eventName);
     }
 
     /**
