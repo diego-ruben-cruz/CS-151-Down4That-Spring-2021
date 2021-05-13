@@ -16,19 +16,6 @@ public class Event implements Comparable<Event> {
 
     protected static DateTimeFormatter eventFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 
-    // /**
-    // * no-param constructor, sets default values to either null, the current
-    // moment,
-    // * or false, depending on var type.
-    // */
-    // public Event() {
-    // authorID = "null";
-    // loggedTime = LocalDateTime.now();
-    // eventName = "null";
-    // eventLocation = "null";
-    // eventVotes = new ArrayList<Vote>();
-    // }
-
     /**
      * Creates an event object with LocalDateTime implementation.
      * 
