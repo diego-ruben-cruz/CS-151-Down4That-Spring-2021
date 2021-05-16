@@ -135,8 +135,6 @@ public class GUI extends JFrame {
         right.add(deleteEvent);
         right.add(Box.createRigidArea(new Dimension(0, 5)));
 
-
-        ArrayList<JTextField> events = new ArrayList<JTextField>();
         
         // Add event button functionality
         addEvent.addActionListener(e -> {
