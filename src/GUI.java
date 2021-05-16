@@ -21,8 +21,8 @@ public class GUI extends JFrame {
                 JLabel locationLabel = new JLabel("Event Location Here");
                 JTextField location = new JTextField(50);
                 location.setMaximumSize(location.getPreferredSize());
-                // time input
-                JLabel timeLabel = new JLabel("Event Time Here");
+                // date and time input
+                JLabel timeLabel = new JLabel("Event Time Here (dd-MM-yyyy 24:00)");
                 JTextField time = new JTextField(50);
                 time.setMaximumSize(time.getPreferredSize());
 
@@ -90,8 +90,10 @@ public class GUI extends JFrame {
                 // center layout
                 center.setLayout(new FlowLayout());
                 center.add(timelineLabel);
-                JTextArea timeline = new JTextArea();
-                center.add(timeline);
+
+                // init textarea that was not used, next to timeline label
+                // JTextArea timeline = new JTextArea();
+                // center.add(timeline);
 
                 // right layout
                 right.add(Box.createRigidArea(new Dimension(0, 50)));

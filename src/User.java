@@ -48,15 +48,6 @@ public class User {
         return hashedPassword;
     }
 
-    // /**
-    // * Sets user's ID to a new ID
-    // *
-    // * @param newUserID the new User ID
-    // */
-    // public void setUserID(String newUserID) {
-    // this.userID = newUserID;
-    // }
-
     /**
      * Sets user email to a new email address
      *

@@ -35,4 +35,13 @@ public class Vote {
     public void switchValue() {
         isUpvote = !isUpvote;
     }
+
+    /**
+     * Retreives the value of the Vote object
+     * 
+     * @return Whether the Vote is an upvote or not (a downvote)
+     */
+    protected boolean getValue() {
+        return this.isUpvote;
+    }
 }
