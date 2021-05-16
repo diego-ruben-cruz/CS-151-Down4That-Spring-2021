@@ -50,12 +50,12 @@ public class GUI extends JFrame {
         frame.add(right);
 
         //Jpanel Colors
-        Color cust1 = new Color(255, 153, 153);
-        Color cust2 = new Color(255, 204, 153);
-        Color cust3 = new Color(255, 255, 153);
-        left.setBackground(cust1);
-        center.setBackground(cust2);
-        right.setBackground(cust3);
+        Color lColor = new Color(255, 153, 153);
+        Color cColor = new Color(255, 204, 153);
+        Color rColor = new Color(255, 255, 153);
+        left.setBackground(lColor);
+        center.setBackground(cColor);
+        right.setBackground(rColor);
 
         //left layout
         left.setLayout(new BoxLayout(left, BoxLayout.PAGE_AXIS));
@@ -66,6 +66,8 @@ public class GUI extends JFrame {
         left.add(left2);
 
         //left1 layout
+        //Color l1Color = new Color(0,0,0);
+        //left1.setBackground(l1Color);
         left1.setLayout(new FlowLayout());
         left1.add(freeHoursLabel);
         left1.add(freeHours);
@@ -77,15 +79,19 @@ public class GUI extends JFrame {
         left1.add(sat);
         left1.add(sun);
         left1.add(addHour);
-        left1.setBorder(BorderFactory.createLineBorder(Color.black));
+        //left1.setBorder(BorderFactory.createLineBorder(Color.black));
 
         //left2 layout
+        //Color l2Color = new Color(0,0,0);
+        //left1.setBackground(l2Color);
         //left2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
 
 
         //center layout
         center.setLayout(new FlowLayout());
         center.add(timelineLabel);
+        JTextArea timeline = new JTextArea();
+        center.add(timeline);
 
         //right layout
         right.add(Box.createRigidArea(new Dimension(0, 50)));
