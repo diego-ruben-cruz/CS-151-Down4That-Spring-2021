@@ -2,6 +2,11 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+/**
+ * JUnit test class for User class.
+ * 
+ * @author DCruz
+ */
 public class TestUser {
     @Test
     public void testGetUserID() {

@@ -6,18 +6,23 @@ import java.time.format.FormatStyle;
 
 import org.junit.Test;
 
+/**
+ * JUnit test class for Event class.
+ * 
+ * @author DCruz
+ */
 public class TestEvent {
         @Test
         public void testGetAuthorID() {
-                Event testEvent = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEvent = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
 
-                assertEquals("DJ Headass", testEvent.getAuthorID());
+                assertEquals("DJ Doggo", testEvent.getAuthorID());
         }
 
         @Test
         public void testGetName() {
-                Event testEvent = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEvent = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
 
                 assertEquals("DJ Set 004", testEvent.getName());
@@ -25,7 +30,7 @@ public class TestEvent {
 
         @Test
         public void testSetName() {
-                Event testEvent = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEvent = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
 
                 testEvent.setName("DJ Set 005");
@@ -35,7 +40,7 @@ public class TestEvent {
 
         @Test
         public void testGetLocation() {
-                Event testEvent = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEvent = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
 
                 assertEquals("Stream", testEvent.getLocation());
@@ -43,7 +48,7 @@ public class TestEvent {
 
         @Test
         public void testSetLocation() {
-                Event testEvent = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEvent = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
 
                 testEvent.setLocation("IRL XDDD");
@@ -53,7 +58,7 @@ public class TestEvent {
 
         @Test
         public void testGetEventDateTime() {
-                Event testEvent = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEvent = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
 
                 LocalDateTime testDateTime = LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter);
@@ -65,7 +70,7 @@ public class TestEvent {
 
         @Test
         public void testSetEventDateTime() {
-                Event testEvent = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEvent = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
 
                 LocalDateTime newDateTime = LocalDateTime.parse("07-07-2021 15:00", Event.eventFormatter);
@@ -82,7 +87,7 @@ public class TestEvent {
         public void testAddVote() {
                 Vote testVote = new Vote("DJ Monke", true);
 
-                Event testEvent = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEvent = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
 
                 testEvent.addVote(testVote);
@@ -97,7 +102,7 @@ public class TestEvent {
                 Vote testVote2 = new Vote("DJ Edgy Reggie", false);
                 Vote testVote3 = new Vote("DJ Oogway", true);
 
-                Event testEvent = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEvent = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
 
                 testEvent.addVote(testVote);
@@ -115,7 +120,7 @@ public class TestEvent {
                 Vote testVote2 = new Vote("DJ Edgy Reggie", false);
                 Vote testVote3 = new Vote("DJ Oogway", true);
 
-                Event testEvent = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEvent = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
 
                 testEvent.addVote(testVote);
@@ -133,7 +138,7 @@ public class TestEvent {
                 Vote testVote2 = new Vote("DJ Edgy Reggie", false);
                 Vote testVote3 = new Vote("DJ Oogway", true);
 
-                Event testEvent = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEvent = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
 
                 testEvent.addVote(testVote);
@@ -145,11 +150,11 @@ public class TestEvent {
 
         @Test
         public void testCompareTo() {
-                Event testEvent = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEvent = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
-                Event testEventClone = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEventClone = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
-                Event testEvent2 = new Event("DJ Monke", "DJ Headass Afterparty - Electric Boogaloo Edition", "Stream",
+                Event testEvent2 = new Event("DJ Monke", "DJ Doggo Afterparty - Electric Boogaloo Edition", "Stream",
                                 LocalDateTime.parse("12-06-2021 17:00", Event.eventFormatter));
                 Event testEvent3 = new Event("DJ Oogway", "DJ Set 021", "Stream",
                                 LocalDateTime.parse("12-06-2021 20:00", Event.eventFormatter));
@@ -161,11 +166,11 @@ public class TestEvent {
 
         @Test
         public void testEquals() {
-                Event testEvent = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEvent = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
-                Event testEventClone = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEventClone = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
-                Event testEvent2 = new Event("DJ Monke", "DJ Headass Afterparty - Electric Boogaloo Edition", "Stream",
+                Event testEvent2 = new Event("DJ Monke", "DJ Doggo Afterparty - Electric Boogaloo Edition", "Stream",
                                 LocalDateTime.parse("12-06-2021 17:00", Event.eventFormatter));
 
                 assertEquals(true, testEvent.equals((Object) testEventClone));
@@ -174,15 +179,15 @@ public class TestEvent {
 
         @Test
         public void testHashCode() {
-                Event testEvent = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEvent = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
                 int testEventHash = testEvent.hashCode();
 
-                Event testEventClone = new Event("DJ Headass", "DJ Set 004", "Stream",
+                Event testEventClone = new Event("DJ Doggo", "DJ Set 004", "Stream",
                                 LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter));
                 int testEventCloneHash = testEventClone.hashCode();
 
-                Event testEvent2 = new Event("DJ Monke", "DJ Headass Afterparty - Electric Boogaloo Edition", "Stream",
+                Event testEvent2 = new Event("DJ Monke", "DJ Doggo Afterparty - Electric Boogaloo Edition", "Stream",
                                 LocalDateTime.parse("12-06-2021 17:00", Event.eventFormatter));
                 int testEvent2Hash = testEvent2.hashCode();
 

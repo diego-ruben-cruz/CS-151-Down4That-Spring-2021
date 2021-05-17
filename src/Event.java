@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 /**
  * The building block of Down4That, uses Vote and LocalDateTime classes.
+ * 
+ * @author DCruz
  */
 public class Event implements Comparable<Event> {
     private String authorID;

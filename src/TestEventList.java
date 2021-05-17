@@ -5,6 +5,11 @@ import java.time.LocalDateTime;
 
 import org.junit.Test;
 
+/**
+ * JUnit test class for EventList class.
+ * 
+ * @author Akela Do-Ho
+ */
 public class TestEventList {
         @Test
         public void testAddEvent() {
