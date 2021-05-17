@@ -214,25 +214,25 @@ public class GUI extends JFrame {
                 String avaliTimes = freeHours.getText();
                 JLabel print = new JLabel();
                 if (mon.isSelected()) {
-                    avaliTimes = avaliTimes + " " + "(Monday)";
+                    avaliTimes = avaliTimes + " " + "(M)";
                 }
                 if (tues.isSelected()) {
-                    avaliTimes = avaliTimes + " " + "(Tuesday)";
+                    avaliTimes = avaliTimes + " " + "(T)";
                 }
                 if (wed.isSelected()) {
-                    avaliTimes = avaliTimes + " " + "(Wednesday)";
+                    avaliTimes = avaliTimes + " " + "(W)";
                 }
                 if (thur.isSelected()) {
-                    avaliTimes = avaliTimes + " " + "(Thursday)";
+                    avaliTimes = avaliTimes + " " + "(Th)";
                 }
                 if (fri.isSelected()) {
-                    avaliTimes = avaliTimes + " " + "(Friday)";
+                    avaliTimes = avaliTimes + " " + "(F)";
                 }
                 if (sat.isSelected()) {
-                    avaliTimes = avaliTimes + " " + "(Saturday)";
+                    avaliTimes = avaliTimes + " " + "(S)";
                 }
                 if (sun.isSelected()) {
-                    avaliTimes = avaliTimes + " " + "(Sunday)";
+                    avaliTimes = avaliTimes + " " + "(Su)";
                 }
                 print.setText(avaliTimes);
                 //print.setMaximumSize(print.getPreferredSize());
