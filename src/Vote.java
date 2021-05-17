@@ -1,6 +1,9 @@
 /**
- * Users are able to vote on other users event proposals with an upvote or
- * downvote. Users may only vote once, and may change their vote if they desire.
+ * Class designed to capture user opinions about event proposals. Users are able
+ * to vote on other users event proposals with an upvote or downvote. Users may
+ * only vote once, and may change their vote if they desire.
+ * 
+ * @author DCruz
  */
 public class Vote {
     private String authorID;

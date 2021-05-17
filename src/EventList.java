@@ -53,7 +53,7 @@ public class EventList {
 
     /**
      * Displays the event list on the console line, mainly used for testing purposes
-     * on the JUnit.
+     * in the corresponding JUnit class.
      */
     public void displayEvents() {
         this.sort();

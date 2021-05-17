@@ -1,6 +1,8 @@
 /**
- * Main class for storing information about a user. The main information that
+ * Class designed to store information about a user. The main information that
  * will be accessed, but never modified, is the userID variable.
+ * 
+ * @author DCruz
  */
 public class User {
     private String userID;
