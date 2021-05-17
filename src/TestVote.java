@@ -17,6 +17,5 @@ public class TestVote {
         testVote.switchValue();
 
         assertEquals(true, testVote.getValue());
-
     }
 }

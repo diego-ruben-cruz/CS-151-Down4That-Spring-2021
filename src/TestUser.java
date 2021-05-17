@@ -38,6 +38,7 @@ public class TestUser {
         User testUser = new User("test@gmail.com", "test_user", "testpassword");
 
         testUser.setHashedPassword("test_password_2_electric_boogaloo");
+
         assertEquals("test_password_2_electric_boogaloo".hashCode(), testUser.getHashedPassword());
     }
 }

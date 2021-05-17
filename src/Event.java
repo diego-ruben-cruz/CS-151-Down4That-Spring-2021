@@ -1,11 +1,10 @@
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.ArrayList;
 
 /**
- * The building block of Down4That, implements both Votes, and Events.
+ * The building block of Down4That, uses Vote and LocalDateTime classes.
  */
 public class Event implements Comparable<Event> {
     private String authorID;
@@ -14,6 +13,8 @@ public class Event implements Comparable<Event> {
     private LocalDateTime loggedTime;
     private ArrayList<Vote> eventVotes;
 
+    // Useful formatter for taking in a date/time. Can be used outside of this
+    // class.
     protected static DateTimeFormatter eventFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 
     /**
@@ -86,7 +87,7 @@ public class Event implements Comparable<Event> {
     public String getEventDateTime() {
         return this.loggedTime.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.MEDIUM));
         // The default detail level for displaying the event time is medium, but this
-        // does not have to be the case, we can adjust it as desired.
+        // does not have to be the case, it be adjusted as desired.
 
     }
 
@@ -113,7 +114,7 @@ public class Event implements Comparable<Event> {
      * Removes a vote object from the arraylist of votes based on the associated
      * UserID.
      * 
-     * @param inputID The user ID of reference for which to remove the vote..
+     * @param inputID The user ID of reference for which to remove the vote.
      */
     public void removeVoteByID(String inputID) {
         int index = 0;
@@ -178,7 +179,7 @@ public class Event implements Comparable<Event> {
             return false;
         }
         /**
-         * Note 05 May 2021
+         * Dev Note 05 May 2021
          * 
          * Not sure if it is worth comparing the Arraylist of votes or by UserID, since
          * that does not have too much to do with what really makes an event the same as
@@ -187,6 +188,8 @@ public class Event implements Comparable<Event> {
          * 
          * The most important thing is to check that the compareTo is too similar. That
          * is def the ground we all can agree on.
+         * 
+         * - Diego
          */
     }
 

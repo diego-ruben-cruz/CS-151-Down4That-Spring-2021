@@ -1,10 +1,11 @@
-
+/**
+ * This class is meant to keep the timeline GUI component updated all the time
+ * while it is running on the website.
+ * 
+ * @author Akela Do-Ho
+ */
 public class Timeline {
 
-    /**
-     * @author Akela Do-Ho This is keep the timeline updated all the time while it's
-     *         running on the website.
-     */
     public void init() {
         // we'll figure this out
     }

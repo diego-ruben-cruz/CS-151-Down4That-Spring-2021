@@ -1,6 +1,6 @@
-
 /**
- * FreeHours Class will manage the client's available hours for Events
+ * FreeHours Class will manage the client's available hours for Events on the
+ * GUI.
  * 
  * @author Dylan Mirandilla
  */

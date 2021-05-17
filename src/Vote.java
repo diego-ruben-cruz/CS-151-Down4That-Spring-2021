@@ -1,16 +1,13 @@
-
 /**
- * Users are able to vote on other user's event proposals with an upvote or
- * downvote. Users may only vote once. Users may change their vote if they
- * desire.
+ * Users are able to vote on other users event proposals with an upvote or
+ * downvote. Users may only vote once, and may change their vote if they desire.
  */
 public class Vote {
     private String authorID;
     private boolean isUpvote;
 
     /**
-     * Users are able to vote on other user's event proposals with an upvote or
-     * downvote. Users are only able to vote once
+     * Creates a vote object with a given userID and boolean.
      * 
      * @param inputID   The ID of the user who voted
      * @param inputType The vote of the user
@@ -21,23 +18,24 @@ public class Vote {
     }
 
     /**
-     * Returns the author ID
+     * Fetches the User ID associated with this vote.
      * 
-     * @return the author ID
+     * @return The User ID
      */
     public String getAuthorID() {
         return authorID;
     }
 
     /**
-     * Switches the vote of the user.
+     * Switches the value of the vote to be the opposite.
      */
     public void switchValue() {
         isUpvote = !isUpvote;
     }
 
     /**
-     * Retreives the value of the Vote object
+     * Retreives the value of the Vote object. Mainly used for testing purposes in
+     * the current implemenation.
      * 
      * @return Whether the Vote is an upvote or not (a downvote)
      */

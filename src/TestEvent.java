@@ -59,6 +59,7 @@ public class TestEvent {
                 LocalDateTime testDateTime = LocalDateTime.parse("12-06-2021 15:00", Event.eventFormatter);
                 String formattedTestDateTime = testDateTime
                                 .format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.MEDIUM));
+
                 assertEquals(formattedTestDateTime, testEvent.getEventDateTime());
         }
 
