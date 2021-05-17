@@ -11,8 +11,11 @@ public class GUI extends JFrame {
         JFrame frame = new JFrame();
         frame.setSize(750, 500);
         JPanel center = new JPanel();
+        center.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         JPanel left = new JPanel();
+        center.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         JPanel right = new JPanel();
+        center.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         frame.setLayout(new GridLayout(0, 3, 0, 0));
         frame.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         frame.add(left);
@@ -44,11 +47,13 @@ public class GUI extends JFrame {
 
         leftNorth.setPreferredSize(new Dimension(30, 40));
         left.add(leftNorth, BorderLayout.NORTH);
-        leftNorth.setBackground(Color.GREEN);
+        Color custOrange = new Color(223, 116, 12);
+        leftNorth.setBackground(custOrange);
         leftNorth.add(freeHoursLabel);
 
         left.add(leftCenter, BorderLayout.CENTER);
-        leftCenter.setBackground(Color.orange);
+        Color custBase = new Color(230, 255, 255);
+        leftCenter.setBackground(custBase);
         leftCenter.setLayout(new BoxLayout(leftCenter, BoxLayout.PAGE_AXIS));
         leftCenter.add(enterFreeHours);
         leftCenter.add(freeHours);
@@ -72,12 +77,13 @@ public class GUI extends JFrame {
         center.setLayout(new BorderLayout());
         JPanel centerNorth = new JPanel();
         JPanel centerCenter = new JPanel();
+        centerCenter.setBackground(custBase);
         centerNorth.setPreferredSize(new Dimension(30, 40));
         center.add(centerNorth, BorderLayout.NORTH);
-        centerNorth.setBackground(Color.blue);
+        Color custCyan = new Color(111, 195, 223);
+        centerNorth.setBackground(custCyan);
         centerNorth.add(timelineLabel);
         center.add(centerCenter, BorderLayout.CENTER);
-        centerCenter.setBackground(Color.CYAN);
 
 
         //right side
@@ -105,16 +111,17 @@ public class GUI extends JFrame {
 
         //right layout
         right.setLayout(new BorderLayout());
+        Color custYellow = new Color(255, 230, 77);
         JPanel rightNorth = new JPanel();
+        rightNorth.setBackground(custYellow);
         JPanel rightCenter = new JPanel();
+        rightCenter.setBackground(custBase);
         rightNorth.setPreferredSize(new Dimension(30, 40));
         right.add(rightNorth, BorderLayout.NORTH);
-        rightNorth.setBackground(Color.MAGENTA);
         rightNorth.add(createAnEvent);
 
 
         right.add(rightCenter, BorderLayout.CENTER);
-        rightCenter.setBackground(Color.pink);
         rightCenter.setLayout(new BoxLayout(rightCenter, BoxLayout.PAGE_AXIS));
         rightCenter.add(eventNameLabel);
         rightCenter.add(Box.createRigidArea(new Dimension(0, 5)));
