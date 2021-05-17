@@ -89,8 +89,6 @@ public class GUI extends JFrame {
         //right side
         //right buttons
         JButton addEvent = new JButton("Add Event");
-        JButton deleteEvent = new JButton("Delete Event");
-
 
         //right inputs
         // event input
@@ -137,9 +135,7 @@ public class GUI extends JFrame {
         rightCenter.add(Box.createRigidArea(new Dimension(0, 5)));
         rightCenter.add(addEvent);
         rightCenter.add(Box.createRigidArea(new Dimension(0, 5)));
-        rightCenter.add(deleteEvent);
-        rightCenter.add(Box.createRigidArea(new Dimension(0, 5)));
-
+        
 
         //Add Event Functionality
         addEvent.addActionListener(e -> {
