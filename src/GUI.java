@@ -1,3 +1,5 @@
+package View;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -5,9 +7,9 @@ import java.awt.event.ActionListener;
 
 public class GUI extends JFrame {
     public static void main(String[] args) {
-        // setting up main Frame
+        //setting up main Frame
         JFrame frame = new JFrame();
-        frame.setSize(700, 700);
+        frame.setSize(750, 500);
         JPanel center = new JPanel();
         JPanel left = new JPanel();
         JPanel right = new JPanel();
@@ -17,11 +19,11 @@ public class GUI extends JFrame {
         frame.add(center);
         frame.add(right);
 
-        // left side
-        // left buttons
+        //left side
+        //left buttons
         JButton addHour = new JButton("Add Hours");
 
-        // left inputs
+        //left inputs
         JLabel freeHoursLabel = new JLabel("Free Hours");
         JLabel enterFreeHours = new JLabel("Enter your Free Hours: 24:00");
         JTextField freeHours = new JTextField(50);
@@ -35,7 +37,7 @@ public class GUI extends JFrame {
         JCheckBox sun = new JCheckBox("Sunday");
         JLabel yourFreeHours = new JLabel("Your Free Hours:");
 
-        // left layout
+        //left layout
         left.setLayout(new BorderLayout());
         JPanel leftNorth = new JPanel();
         JPanel leftCenter = new JPanel();
@@ -50,6 +52,7 @@ public class GUI extends JFrame {
         leftCenter.setLayout(new BoxLayout(leftCenter, BoxLayout.PAGE_AXIS));
         leftCenter.add(enterFreeHours);
         leftCenter.add(freeHours);
+        freeHours.setMaximumSize(freeHours.getPreferredSize());
         leftCenter.add(mon);
         leftCenter.add(tues);
         leftCenter.add(wed);
@@ -59,12 +62,13 @@ public class GUI extends JFrame {
         leftCenter.add(sun);
         leftCenter.add(Box.createRigidArea(new Dimension(0, 10)));
         leftCenter.add(addHour);
+        leftCenter.add(yourFreeHours);
 
-        // center
-        // center labels
+        //center
+        //center labels
         JLabel timelineLabel = new JLabel("Timeline");
 
-        // center layout
+        //center layout
         center.setLayout(new BorderLayout());
         JPanel centerNorth = new JPanel();
         JPanel centerCenter = new JPanel();
@@ -75,12 +79,14 @@ public class GUI extends JFrame {
         center.add(centerCenter, BorderLayout.CENTER);
         centerCenter.setBackground(Color.CYAN);
 
-        // right side
-        // right buttons
+
+        //right side
+        //right buttons
         JButton addEvent = new JButton("Add Event");
         JButton deleteEvent = new JButton("Delete Event");
 
-        // right inputs
+
+        //right inputs
         // event input
         JLabel eventNameLabel = new JLabel("Event Name Here");
         JTextField eventName = new JTextField(50);
@@ -94,10 +100,10 @@ public class GUI extends JFrame {
         JTextField time = new JTextField(50);
         time.setMaximumSize(time.getPreferredSize());
 
-        // otherLabels
+        //otherLabels
         JLabel createAnEvent = new JLabel("Create an Event");
 
-        // right layout
+        //right layout
         right.setLayout(new BorderLayout());
         JPanel rightNorth = new JPanel();
         JPanel rightCenter = new JPanel();
@@ -105,6 +111,7 @@ public class GUI extends JFrame {
         right.add(rightNorth, BorderLayout.NORTH);
         rightNorth.setBackground(Color.MAGENTA);
         rightNorth.add(createAnEvent);
+
 
         right.add(rightCenter, BorderLayout.CENTER);
         rightCenter.setBackground(Color.pink);
@@ -126,7 +133,8 @@ public class GUI extends JFrame {
         rightCenter.add(deleteEvent);
         rightCenter.add(Box.createRigidArea(new Dimension(0, 5)));
 
-        // Add Event Functionality
+
+        //Add Event Functionality
         addEvent.addActionListener(e -> {
             String data = "Event: " + eventName.getText() + "    " + " Time: " + time.getText();
             try {
@@ -191,6 +199,39 @@ public class GUI extends JFrame {
 
             } catch (Exception exception) {
                 // do nothing
+            }
+        });
+
+        addHour.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String avaliTimes = freeHours.getText();
+                JLabel print = new JLabel();
+                if (mon.isSelected()) {
+                    avaliTimes = avaliTimes + " " + "(Monday)";
+                }
+                if (tues.isSelected()) {
+                    avaliTimes = avaliTimes + " " + "(Tuesday)";
+                }
+                if (wed.isSelected()) {
+                    avaliTimes = avaliTimes + " " + "(Wednesday)";
+                }
+                if (thur.isSelected()) {
+                    avaliTimes = avaliTimes + " " + "(Thursday)";
+                }
+                if (fri.isSelected()) {
+                    avaliTimes = avaliTimes + " " + "(Friday)";
+                }
+                if (sat.isSelected()) {
+                    avaliTimes = avaliTimes + " " + "(Saturday)";
+                }
+                if (sun.isSelected()) {
+                    avaliTimes = avaliTimes + " " + "(Sunday)";
+                }
+                print.setText(avaliTimes);
+                //print.setMaximumSize(print.getPreferredSize());
+                //print.setLineWrap(true);
+                leftCenter.add(print);
+                frame.setVisible(true);
             }
         });
 
