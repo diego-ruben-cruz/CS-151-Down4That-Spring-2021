@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Responsible for handling a collection of events, with a sorting operation
+ * that occurs upon modification of the collection.
+ */
 public class EventList {
     private ArrayList<Event> eventsList;
 
@@ -13,7 +17,6 @@ public class EventList {
 
     /**
      * Sorts eventsList by date/time, then by name, then by other sorting criteria.
-     * This will likely implement some comparator for objects.
      */
     public void sort() {
         Collections.sort(eventsList);
@@ -29,9 +32,9 @@ public class EventList {
     }
 
     /**
-     * Deletes an event with a specific name from eventsList.
+     * Deletes the first occurrence of a given event from the event list.
      *
-     * @param eventToDelete The name of the event that is to be deleted.
+     * @param eventToDelete The event to be deleted.
      */
     public void deleteEvent(Event eventToDelete) {
         eventsList.remove(eventToDelete);
@@ -48,6 +51,10 @@ public class EventList {
         this.sort();
     }
 
+    /**
+     * Displays the event list on the console line, mainly used for testing purposes
+     * in the corresponding JUnit class.
+     */
     public void displayEvents() {
         this.sort();
         for (Event e : eventsList) {

@@ -1,30 +1,36 @@
-
+/**
+ * Class designed to store information about a user. The main information that
+ * will be accessed, but never modified, is the userID variable.
+ * 
+ * @author DCruz
+ */
 public class User {
     private String userID;
     private String email;
     private int hashedPassword;
 
-    // * @author Akela Do-Ho//
     /**
-     * @param inputEmail    this will hold the user's email
-     * @param inputUsername this will hold user's username
-     * @param inputPassword this will hold user's passcode Constructor for user
-     *                      object which in hold user's email, username, and their
-     *                      password of choice.
+     * Creates a User object with a given input email, username, and password.
+     * 
+     * @param inputEmail    The given email to be used.
+     * @param inputUsername The given username to be used.
+     * @param inputPassword The given password that will subsequently be hashed for
+     *                      security reasons.
      */
     public User(String inputEmail, String inputUsername, String inputPassword) {
         email = inputEmail;
         userID = inputUsername;
 
         // need to find some hashing algo that we can use to input the password and
-        // avoid it being used as a plaintext, hashCode() is a placeholder for now.
+        // avoid it being used as a plaintext, hashCode() is a placeholder for this
+        // prototype.
         hashedPassword = inputPassword.hashCode();
     }
 
     /**
      * Fetches the ID associated with a User.
      *
-     * @return userID the user's ID
+     * @return The UserID associated with this user.
      */
     public String getUserID() {
         return userID;
@@ -33,29 +39,20 @@ public class User {
     /**
      * Fetches the email associated with a User.
      *
-     * @return email the user's email address
+     * @return The email address associated with this user.
      */
     public String getEmail() {
         return email;
     }
 
     /**
-     * Fetches the hashed password associated with a User.
+     * Fetches the hashed password associated with a user.
      *
-     * @return hashedPassword the user's password
+     * @return The hashed password associate with this user.
      */
     public int getHashedPassword() {
         return hashedPassword;
     }
-
-    // /**
-    // * Sets user's ID to a new ID
-    // *
-    // * @param newUserID the new User ID
-    // */
-    // public void setUserID(String newUserID) {
-    // this.userID = newUserID;
-    // }
 
     /**
      * Sets user email to a new email address
@@ -69,11 +66,11 @@ public class User {
     /**
      * Sets user password to a new password
      *
-     * @param newPassword the new password for user
+     * @param newPassword the new password for user that will subsequently be
+     *                    hashed.
      */
     public void setHashedPassword(String newPassword) {
         this.hashedPassword = newPassword.hashCode();
-        // note: hashCode used as placeholder for hashing algorithm;
+        // Note: hashCode used as placeholder for hashing algorithm
     }
-
 }

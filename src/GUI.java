@@ -1,5 +1,3 @@
-package View;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class GUI extends JFrame {
     public static void main(String[] args) {
-        //setting up main Frame
+        // setting up main Frame
         JFrame frame = new JFrame();
         frame.setSize(700, 700);
         JPanel center = new JPanel();
@@ -19,11 +17,11 @@ public class GUI extends JFrame {
         frame.add(center);
         frame.add(right);
 
-        //left side
-        //left buttons
+        // left side
+        // left buttons
         JButton addHour = new JButton("Add Hours");
 
-        //left inputs
+        // left inputs
         JLabel freeHoursLabel = new JLabel("Free Hours");
         JLabel enterFreeHours = new JLabel("Enter your Free Hours: 24:00");
         JTextField freeHours = new JTextField(50);
@@ -37,7 +35,7 @@ public class GUI extends JFrame {
         JCheckBox sun = new JCheckBox("Sunday");
         JLabel yourFreeHours = new JLabel("Your Free Hours:");
 
-        //left layout
+        // left layout
         left.setLayout(new BorderLayout());
         JPanel leftNorth = new JPanel();
         JPanel leftCenter = new JPanel();
@@ -62,11 +60,11 @@ public class GUI extends JFrame {
         leftCenter.add(Box.createRigidArea(new Dimension(0, 10)));
         leftCenter.add(addHour);
 
-        //center
-        //center labels
+        // center
+        // center labels
         JLabel timelineLabel = new JLabel("Timeline");
 
-        //center layout
+        // center layout
         center.setLayout(new BorderLayout());
         JPanel centerNorth = new JPanel();
         JPanel centerCenter = new JPanel();
@@ -77,14 +75,12 @@ public class GUI extends JFrame {
         center.add(centerCenter, BorderLayout.CENTER);
         centerCenter.setBackground(Color.CYAN);
 
-
-        //right side
-        //right buttons
+        // right side
+        // right buttons
         JButton addEvent = new JButton("Add Event");
         JButton deleteEvent = new JButton("Delete Event");
 
-
-        //right inputs
+        // right inputs
         // event input
         JLabel eventNameLabel = new JLabel("Event Name Here");
         JTextField eventName = new JTextField(50);
@@ -98,10 +94,10 @@ public class GUI extends JFrame {
         JTextField time = new JTextField(50);
         time.setMaximumSize(time.getPreferredSize());
 
-        //otherLabels
+        // otherLabels
         JLabel createAnEvent = new JLabel("Create an Event");
 
-        //right layout
+        // right layout
         right.setLayout(new BorderLayout());
         JPanel rightNorth = new JPanel();
         JPanel rightCenter = new JPanel();
@@ -109,7 +105,6 @@ public class GUI extends JFrame {
         right.add(rightNorth, BorderLayout.NORTH);
         rightNorth.setBackground(Color.MAGENTA);
         rightNorth.add(createAnEvent);
-
 
         right.add(rightCenter, BorderLayout.CENTER);
         rightCenter.setBackground(Color.pink);
@@ -131,8 +126,7 @@ public class GUI extends JFrame {
         rightCenter.add(deleteEvent);
         rightCenter.add(Box.createRigidArea(new Dimension(0, 5)));
 
-
-        //Add Event Functionality
+        // Add Event Functionality
         addEvent.addActionListener(e -> {
             String data = "Event: " + eventName.getText() + "    " + " Time: " + time.getText();
             try {

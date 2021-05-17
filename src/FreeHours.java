@@ -1,10 +1,12 @@
-
 /**
- * FreeHours Class will manage the client's available hours for Events
+ * Manages the client's available hours for Events on the GUI.
+ * 
+ * @deprecated Legacy code when attempting to set up web app implemenation with
+ *             browser-based GUI. May be updated to be better suited for a local
+ *             java swing GUI implementation.
  * 
  * @author Dylan Mirandilla
  */
-
 public class FreeHours {
     private int[][] timeline;
 
