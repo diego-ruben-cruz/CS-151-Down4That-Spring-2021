@@ -1,1 +1,2 @@
-Home Repository for the CS 151 Group Project under Mariia Surmenok for Spring 2021
+# CS-151-Down4That-Spring-2021
+Home Repository for the CMPE 165 Group Project under Mariia Surmenok for Spring 2021.
