@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="google-signin-client_id"
+        content="1080241557916-634pdsmbv5eket63vm3jksnokl153kmf.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+
+    <title>Down4That</title>
+    <script src="main.js"> </script>
+</head>
+
+<body>
+
+    <div id="HomePage">
+
+        <div>
+            <img id="home-logo" src="img/logo.png" />
+        </div>
+
+        <div id="home-description">
+            <p>Down4That is a web application that allows users to easily schedule events for yourself or with friends
+                without having to spend the time to figure out when you or each friend is available. Please login with
+                google to see if you are Down4That!</p>
+        </div>
+
+        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+
+    </div>
+
+
+    <div class="data">
+        <nav>
+            <div class="logo">
+                <h1>Down4That</h1>
+            </div>
+        </nav>
+
+        <div class="boxes">
+            <div class="box1">
+                <h1><u>Your Free Hours:</u></h1><br>
+                <label>Day of Week:</label>
+                <input class="un " type="text" placeholder="Day of Week"><br><br><br>
+                <label>Time:</label>
+                <input class="un " type="text" placeholder="Enter Time"><br><br><br>
+                <button type="button">Update</button>
+                <button type="button">Remove</button>
+            </div>
+            <div class="box2">
+                <h1><u>Timeline</u></h1><br>
+                <p class="stats">HR</p>
+            </div>
+            <div class="box3">
+                <h1><u>Create Event</u></h1><br>
+                <label>Name:</label>
+                <input class="un " type="text" placeholder="Enter Name"><br><br><br>
+                <label>Time:</label>
+                <input class="un " type="text" placeholder="Enter Time"><br><br><br>
+                <label>Date:</label>
+                <input class="un " type="text" placeholder="Enter Date"><br><br><br>
+                <label>Location:</label>
+                <input class="un " type="text" placeholder="Enter Location"><br><br><br>
+                <button type="button">Create</button>
+            </div>
+        </div>
+
+        <div class="sign-out">
+            <button class="logout-button" onclick="signOut()"> Sign Out </button>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
